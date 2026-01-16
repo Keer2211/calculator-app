@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator UI</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script>
+        async function calculate(operation) {
+            const a = document.getElementById("a").value;
+            const b = document.getElementById("b").value;
+
+            const response = await fetch(`/api/${operation}?a=${a}&b=${b}`);
+            const data = await response.json();
+
+            document.getElementById("result").innerText = "Result: " + data.result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <input type="number" id="a" placeholder="Enter first number">
+    <input type="number" id="b" placeholder="Enter second number">
+    <br><br>
+    <button onclick="calculate('add')">Add</button>
+    <button onclick="calculate('subtract')">Subtract</button>
+    <button onclick="calculate('multiply')">Multiply</button>
+    <button onclick="calculate('divide')">Divide</button>
+    <p id="result"></p>
+</body>
+</html>
