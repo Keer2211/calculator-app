@@ -1,4 +1,4 @@
-# 🧮 FastAPI Calculator Application
+# 🧮 Fast API Calculator Application
 
 A simple yet professional **Calculator API + UI** built with [FastAPI](https://fastapi.tiangolo.com/).  
 This project demonstrates clean architecture, modular code, and a minimal frontend using Jinja2 templates.
